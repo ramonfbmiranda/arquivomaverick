@@ -1,0 +1,32 @@
+import "@/App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "@/pages/LandingPage";
+import MembersGrid from "@/pages/MembersGrid";
+import MemberProfile from "@/pages/MemberProfile";
+import Gallery from "@/pages/Gallery";
+import Quotes from "@/pages/Quotes";
+import AdminPanel from "@/pages/AdminPanel";
+import Timeline from "@/pages/Timeline";
+import Bordoes from "@/pages/Bordoes";
+
+function App() {
+  return (
+    <div className="App">
+      <div className="noise-overlay" />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/members" element={<MembersGrid />} />
+          <Route path="/members/:memberId" element={<MemberProfile />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/quotes" element={<Quotes />} />
+          <Route path="/timeline" element={<Timeline />} />
+          <Route path="/bordoes" element={<Bordoes />} />
+          <Route path="/admin" element={<AdminPanel />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
